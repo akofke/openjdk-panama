@@ -23,19 +23,20 @@
 
 /*
  * @test
- * @bug 8043758
- * @summary Testing that try to enable unsupported ciphers
- *          causes IllegalArgumentException.
+ * @bug 8085979
+ * @summary Testing TLS engines closing using each of the supported
+ *          cipher suites.
  * @library /sun/security/krb5/auto /javax/net/ssl/TLSCommon
- * @run main/othervm -Dtest.security.protocol=DTLSv1.0
- *      DTLSv10UnsupportedCiphersTest
+ * @run main/othervm -Dtest.security.protocol=TLSv1 -Dtest.mode=norm TLSEnginesClosureTest
+ * @run main/othervm -Dtest.security.protocol=TLSv1 -Dtest.mode=norm_sni TLSEnginesClosureTest
+ * @run main/othervm -Dtest.security.protocol=TLSv1 -Dtest.mode=krb TLSEnginesClosureTest
  */
 
 /**
- * Testing that a try to enable unsupported ciphers causes IllegalArgumentException.
+ * Testing TLS engines closing using each of the supported cipher suites.
  */
-public class DTLSv10UnsupportedCiphersTest {
+public class TLSEnginesClosureTest {
     public static void main(String[] args) {
-        UnsupportedCiphersTest.main(args);
+        EnginesClosureTest.main(args);
     }
 }

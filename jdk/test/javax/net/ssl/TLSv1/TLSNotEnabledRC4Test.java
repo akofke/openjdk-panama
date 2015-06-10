@@ -23,19 +23,17 @@
 
 /*
  * @test
- * @bug 8043758
- * @summary Testing that try to enable unsupported ciphers
- *          causes IllegalArgumentException.
+ * @bug 8085979
+ * @summary Testing TLS engines do not enable RC4 ciphers by default.
  * @library /sun/security/krb5/auto /javax/net/ssl/TLSCommon
- * @run main/othervm -Dtest.security.protocol=DTLSv1.0
- *      DTLSv10UnsupportedCiphersTest
+ * @run main/othervm -Dtest.security.protocol=TLSv1 TLSNotEnabledRC4Test
  */
 
 /**
- * Testing that a try to enable unsupported ciphers causes IllegalArgumentException.
+ * Testing DTLS engines do not enable RC4 ciphers by default.
  */
-public class DTLSv10UnsupportedCiphersTest {
-    public static void main(String[] args) {
-        UnsupportedCiphersTest.main(args);
+public class TLSNotEnabledRC4Test {
+    public static void main(String[] args) throws Exception {
+        NotEnabledRC4Test.main(args);
     }
 }

@@ -23,19 +23,20 @@
 
 /*
  * @test
- * @bug 8043758
- * @summary Testing that try to enable unsupported ciphers
- *          causes IllegalArgumentException.
+ * @bug 8085979
+ * @summary Testing TLS engines handshake using each of the supported
+ *          cipher suites.
  * @library /sun/security/krb5/auto /javax/net/ssl/TLSCommon
- * @run main/othervm -Dtest.security.protocol=DTLSv1.0
- *      DTLSv10UnsupportedCiphersTest
+ * @run main/othervm -Dtest.security.protocol=TLSv1 -Dtest.mode=norm TLSHandshakeTest
+ * @run main/othervm -Dtest.security.protocol=TLSv1 -Dtest.mode=norm_sni TLSHandshakeTest
+ * @run main/othervm -Dtest.security.protocol=TLSv1 -Dtest.mode=krb TLSHandshakeTest
  */
 
 /**
- * Testing that a try to enable unsupported ciphers causes IllegalArgumentException.
+ * Testing TLS engines handshake using each of the supported cipher suites.
  */
-public class DTLSv10UnsupportedCiphersTest {
+public class TLSHandshakeTest {
     public static void main(String[] args) {
-        UnsupportedCiphersTest.main(args);
+        HandshakeTest.main(args);
     }
 }

@@ -27,10 +27,10 @@ import javax.net.ssl.SSLEngine;
 /**
  * Testing that try to enable unsupported ciphers causes IllegalArgumentException.
  */
-public class UnSupportedCiphersTest extends SSLEngineTestCase {
+public class UnsupportedCiphersTest extends SSLEngineTestCase {
 
     public static void main(String[] s) {
-        UnSupportedCiphersTest test = new UnSupportedCiphersTest();
+        UnsupportedCiphersTest test = new UnsupportedCiphersTest();
         test.runTests(Ciphers.UNSUPPORTED_CIPHERS);
     }
 

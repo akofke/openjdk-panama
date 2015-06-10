@@ -27,14 +27,14 @@
  * @summary Testing that try to enable unsupported ciphers
  *          causes IllegalArgumentException.
  * @library /sun/security/krb5/auto /javax/net/ssl/TLSCommon
- * @run main/othervm -Dtest.security.protocol=DTLS DTLSUnSupportedCiphersTest
+ * @run main/othervm -Dtest.security.protocol=DTLS DTLSUnsupportedCiphersTest
  */
 
 /**
  * Testing that a try to enable unsupported ciphers causes IllegalArgumentException.
  */
-public class DTLSUnSupportedCiphersTest {
+public class DTLSUnsupportedCiphersTest {
     public static void main(String[] args) {
-        UnSupportedCiphersTest.main(args);
+        UnsupportedCiphersTest.main(args);
     }
 }
