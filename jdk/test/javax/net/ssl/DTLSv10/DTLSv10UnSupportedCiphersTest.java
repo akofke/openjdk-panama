@@ -28,14 +28,14 @@
  *          causes IllegalArgumentException.
  * @library /sun/security/krb5/auto /javax/net/ssl/TLSCommon
  * @run main/othervm -Dtest.security.protocol=DTLSv1.0
- *      DTLSv10UnSupportedCiphersTest
+ *      DTLSv10UnsupportedCiphersTest
  */
 
 /**
  * Testing that a try to enable unsupported ciphers causes IllegalArgumentException.
  */
-public class DTLSv10UnSupportedCiphersTest {
+public class DTLSv10UnsupportedCiphersTest {
     public static void main(String[] args) {
-        UnSupportedCiphersTest.main(args);
+        UnsupportedCiphersTest.main(args);
     }
 }
