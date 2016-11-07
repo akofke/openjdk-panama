@@ -27,20 +27,20 @@
  * @summary Tests for alternate JDI connector -- listening
  * @modules jdk.jshell/jdk.jshell.execution
  * @build KullaTesting ExecutionControlTestBase
- * @run testng JDIListeningExecutionControlTest
+ * @run testng JdiListeningExecutionControlTest
  */
 
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
-import jdk.jshell.execution.JDIDefaultExecutionControl;
+import jdk.jshell.execution.JdiDefaultExecutionControl;
 
 @Test
-public class JDIListeningExecutionControlTest extends ExecutionControlTestBase {
+public class JdiListeningExecutionControlTest extends ExecutionControlTestBase {
 
     @BeforeMethod
     @Override
     public void setUp() {
-        setUp(builder -> builder.executionEngine(JDIDefaultExecutionControl.listen(null)));
+        setUp(builder -> builder.executionEngine(JdiDefaultExecutionControl.listen(null)));
     }
 }
