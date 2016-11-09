@@ -27,20 +27,20 @@
  * @summary Tests for standard JDI connector (without failover) -- launching
  * @modules jdk.jshell/jdk.jshell.execution
  * @build KullaTesting ExecutionControlTestBase
- * @run testng JDILaunchingExecutionControlTest
+ * @run testng JdiLaunchingExecutionControlTest
  */
 
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
-import jdk.jshell.execution.JDIDefaultExecutionControl;
+import jdk.jshell.execution.JdiDefaultExecutionControl;
 
 @Test
-public class JDILaunchingExecutionControlTest extends ExecutionControlTestBase {
+public class JdiLaunchingExecutionControlTest extends ExecutionControlTestBase {
 
     @BeforeMethod
     @Override
     public void setUp() {
-        setUp(builder -> builder.executionEngine(JDIDefaultExecutionControl.launch()));
+        setUp(builder -> builder.executionEngine(JdiDefaultExecutionControl.launch()));
     }
 }
