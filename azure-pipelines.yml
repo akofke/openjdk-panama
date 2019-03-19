@@ -24,6 +24,10 @@ steps:
   condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'branches/foreign+vector'))
   displayName: 'configure'
 
+- script: bash configure
+  condition: and(succeeded(), ne(variables['Build.SourceBranchName'], 'branches/foreign+vector'))
+  displayName: 'configure'
+
 - script: |
-    make
+    make images docs
   displayName: 'make'
