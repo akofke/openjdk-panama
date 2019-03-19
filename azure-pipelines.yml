@@ -1,0 +1,21 @@
+# C/C++ with GCC
+# Build your C/C++ project with GCC using make.
+# Add steps that publish test results, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/apps/c-cpp/gcc
+
+trigger:
+- branches/foreign+vector
+
+pool:
+  vmImage: 'Ubuntu-16.04'
+
+steps:
+- task: JavaToolInstaller@0
+  inputs:
+    versionSpec: '11'
+
+- script: sudo apt install libclang-dev
+  displayName: 'install dependencies'
+- script: |
+    make
+  displayName: 'make'
