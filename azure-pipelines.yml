@@ -13,9 +13,14 @@ steps:
 - task: JavaToolInstaller@0
   inputs:
     versionSpec: '11'
+    jdkArchitectureOption: x64
+    jdkSourceOption: azureStorage
+    jdkDestinationDirectory: jdk
 
 - script: sudo apt install libclang-dev
   displayName: 'install dependencies'
+- script: bash configure --with-libclang=/usr/lib/llvm-3.8/
+  displayName: 'configure'
 - script: |
     make
   displayName: 'make'
