@@ -22,11 +22,11 @@ steps:
   displayName: 'install dependencies'
 
 - script: bash configure --with-libclang=/usr/lib/llvm-3.8/
-  condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'branches/foreign+vector'))
+  condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'ci/foreign+vector'))
   displayName: 'configure'
 
 - script: bash configure
-  condition: and(succeeded(), ne(variables['Build.SourceBranchName'], 'branches/foreign+vector'))
+  condition: and(succeeded(), ne(variables['Build.SourceBranchName'], 'ci/foreign+vector'))
   displayName: 'configure'
 
 - script: |
