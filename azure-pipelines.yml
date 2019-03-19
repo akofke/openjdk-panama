@@ -19,8 +19,11 @@ steps:
 
 - script: sudo apt install libclang-dev
   displayName: 'install dependencies'
+
 - script: bash configure --with-libclang=/usr/lib/llvm-3.8/
+  condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'branches/foreign+vector'))
   displayName: 'configure'
+
 - script: |
     make
   displayName: 'make'
