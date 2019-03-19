@@ -17,7 +17,7 @@ steps:
 #     jdkSourceOption: azureStorage
 #     jdkDestinationDirectory: jdk
 
-- script: sudo apt install libclang-dev
+- script: sudo apt-get install libclang-dev libx11-dev libxext-dev libxrender-dev libxrandr-dev libxtst-dev libxt-dev
   displayName: 'install dependencies'
 
 - script: bash configure --with-libclang=/usr/lib/llvm-3.8/
